@@ -37,7 +37,7 @@ def get_response(url, payload):
         'X-COINONE-PAYLOAD': encoded_payload,
         'X-COINONE-SIGNATURE': signature,
     }
-    api_url = HOST + url
+    api_url = config.HOST + url
     req = Request(api_url, data=encoded_payload, headers=headers, method='POST')
 
     with urlopen(req) as res:
