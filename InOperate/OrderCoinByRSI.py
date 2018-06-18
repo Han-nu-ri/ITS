@@ -16,11 +16,11 @@ def check_previous_order_status(order_id, coin_type):
 			print("COIN_ONE API Response_Error, ErrorCode :", order_information["errorCode"])
 		else :
 			time_stamp = order_information["info"]["timestamp"]
-			order_quantity = double(order_information["info"]["qty"])
+			order_quantity = float(order_information["info"]["qty"])
 			trade_type = order_information["info"]["type"]
 			fee = order_information["info"]["fee"]
 			order_price = order_information["info"]["price"]
-			remain_quantity = double(order_information["info"]["remainQty"])
+			remain_quantity = float(order_information["info"]["remainQty"])
 			order_status = order_information["status"]
 
 			message = ("Prev_Order[{0}] is {1}").format(order_id, order_status)
@@ -44,11 +44,11 @@ def reorder_live_sell_order(order_id, coin_type):
 			print("COIN_ONE API Response_Error, ErrorCode :", order_information["errorCode"])
 		else :
 			time_stamp = order_information["info"]["timestamp"]
-			order_quantity = double(order_information["info"]["qty"])
+			order_quantity = float(order_information["info"]["qty"])
 			trade_type = order_information["info"]["type"]
 			fee = order_information["info"]["fee"]
 			order_price = order_information["info"]["price"]
-			remain_quantity = double(order_information["info"]["remainQty"])
+			remain_quantity = float(order_information["info"]["remainQty"])
 			order_status = order_information["status"]
 
 			message = ("Prev_Order[{0}] is {1}").format(order_id, order_status)
